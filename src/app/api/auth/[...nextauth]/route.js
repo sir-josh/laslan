@@ -1,10 +1,8 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
-import { PrismaClient } from "@prisma/client";
+import { prisma } from "@/utils/db";
 import bcrypt from "bcryptjs";
-
-const prisma = new PrismaClient();
 
 const handler = NextAuth({
 	providers: [
@@ -45,8 +43,8 @@ const handler = NextAuth({
 		}),
 	],
 	pages: {
-		error: "/dashboard/login"
-	}
+		error: "/dashboard/login",
+	},
 });
 
 export { handler as GET, handler as POST };
