@@ -1,6 +1,6 @@
 .container {
 	display: flex;
-	gap: 100px;
+	gap: 80px;
 }
 
 .posts {
@@ -16,13 +16,23 @@
 
 .imgContainer {
     position: relative;
-    height: 200px;
-    width: 100px;
+    margin-right: 20px;
+}
+
+.imgContainer .img {
+    align-self: center;
+}
+
+.postTitle {
+    font-weight: normal;
 }
 
 .delete {
     cursor: pointer;
     color: red;
+    margin-left: 10px;
+    align-self: start;
+    margin-top: 5px;
 }
 
 .img {
@@ -54,7 +64,6 @@
     font-style: italic;
     margin-top: 100px;
 }
-
 
 .button {
 	padding: 20px;

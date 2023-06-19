@@ -41,7 +41,6 @@ const Dashboard = () => {
 		`/api/posts?username=${session?.data?.user.name}`,
 		fetcher,
 	);
-	console.log(data);
 
 	if (session.status === "loading") {
 		return <p>Loading...</p>;
@@ -106,8 +105,8 @@ const Dashboard = () => {
 										<Image
 											src={post.img}
 											alt="Post image"
-											width={200}
-											height={100}
+											width={100}
+											height={70}
 										/>
 									</div>
 									<h2 className={styles.postTitle}>
