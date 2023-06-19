@@ -1,14 +1,17 @@
 "use client";
 import { signIn, useSession } from "next-auth/react";
 import styles from "./page.module.css";
-import React, { useState } from "react";
+import { ThemeContext } from "@/context/ThemeContext";
+import React, { useState, useContext } from "react";
 import { useRouter } from "next/Navigation";
+import Link from "next/link";
 
 const Login = () => {
 	// const [err, setErr] = useState(false);
 	const session = useSession();
 	const router = useRouter();
-	
+	const { mode } = useContext(ThemeContext);
+
 	if (session.status === "loading") {
 		return <p>Loading...</p>;
 	}
@@ -28,6 +31,11 @@ const Login = () => {
 
 	return (
 		<div className={styles.container}>
+			<div className={`${mode} register` }>
+				<Link href="/dashboard/register">
+					Need an account? Sign up here
+				</Link>
+			</div>
 			<form className={styles.form} onSubmit={handleSubmit}>
 				<input
 					type="email"

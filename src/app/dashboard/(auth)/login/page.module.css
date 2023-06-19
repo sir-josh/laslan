@@ -34,21 +34,21 @@
 }
 
 .divider {
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
 	align-items: center;
 	gap: 15px;
 }
 
 .ruler {
-    border-top: 1px solid #bbb;
-    width: 100%;
+	border-top: 1px solid #bbb;
+	width: 100%;
 }
 
 .signIn {
-    padding: 10px 20px;
-    background: red;
-    color: white;
-    cursor: pointer;
-    border: none;
+	padding: 10px 20px;
+	background: red;
+	color: white;
+	cursor: pointer;
+	border: none;
 }

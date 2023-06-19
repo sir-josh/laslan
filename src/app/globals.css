@@ -135,6 +135,21 @@ body {
 	color: #bbb;
 }
 
+.register {
+	padding: 5px 10px;
+	border-radius: 3px;
+}
+
+.light .register {
+	background: #d3ffe9;
+	color: #53c28b;
+}
+
+.dark .register {
+	background: #53c28b52;
+	color: #ffffff;
+}
+
 a {
 	text-decoration: none;
 	color: inherit;
