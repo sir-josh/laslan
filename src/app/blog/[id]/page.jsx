@@ -2,9 +2,11 @@ import React from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import getURL from "@/utils/getUrl";
 
 async function getData(id) {
-	const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
+	// const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
+	const res = await fetch(`${getURL(`api/posts/${id}`)}`, {
 		cache: "no-store",
 	});
 
@@ -27,7 +29,6 @@ export async function generateMetaData({ params }) {
 
 const BlogPost = async ({ params }) => {
 	const data = await getData(params.id);
-	console.log(data);
 
 	return (
 		<div className={styles.container}>

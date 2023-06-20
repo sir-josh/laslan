@@ -1,10 +1,13 @@
+"use client";
+import React from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
-import React from "react";
 import Link from "next/link";
+import getURL from "@/utils/getUrl";
 
 async function getData() {
-	const res = await fetch("http://localhost:3000/api/posts", {
+	// const res = await fetch("http://localhost:3000/api/posts", {
+	const res = await fetch(`${getURL("/api/posts")}`, {
 		cache: "no-store",
 	});
 
@@ -17,6 +20,7 @@ async function getData() {
 
 const Blog = async () => {
 	const data = await getData();
+
 	return (
 		<div className={styles.mainContainer}>
 			{data.map((item) => (
