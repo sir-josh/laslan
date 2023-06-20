@@ -3,7 +3,7 @@ import { signIn, useSession } from "next-auth/react";
 import styles from "./page.module.css";
 import { ThemeContext } from "@/context/ThemeContext";
 import React, { useState, useContext } from "react";
-import { useRouter } from "next/Navigation";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 const Login = () => {
