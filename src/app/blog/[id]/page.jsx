@@ -6,7 +6,7 @@ import getURL from "@/utils/getUrl";
 
 async function getData(id) {
 	// const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
-	const res = await fetch(`${getURL(`api/posts/${id}`)}`, {
+	const res = await fetch(getURL(`api/posts/${id}`), {
 		cache: "no-store",
 	});
 
@@ -28,6 +28,7 @@ export async function generateMetaData({ params }) {
 }
 
 const BlogPost = async ({ params }) => {
+	console.log(getURL(`api/posts/${params.id}`));
 	const data = await getData(params.id);
 
 	return (
