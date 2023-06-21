@@ -6,12 +6,12 @@ import getURL from "@/utils/getUrl";
 
 async function getData(id) {
 	// const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
-	const res = await fetch(getURL(`api/posts/${id}`), {
+	const fetchUrlEndpoint = getURL(`api/posts/${id}`);
+	const res = await fetch(fetchUrlEndpoint, {
 		cache: "no-store",
 	});
 
 	if (!res.ok) {
-		// throw new Error("Failed to fetch data1");
 		return notFound();
 	}
 
@@ -28,7 +28,6 @@ export async function generateMetaData({ params }) {
 }
 
 const BlogPost = async ({ params }) => {
-	console.log(getURL(`api/posts/${params.id}`));
 	const data = await getData(params.id);
 
 	return (

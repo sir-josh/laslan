@@ -7,7 +7,9 @@ import getURL from "@/utils/getUrl";
 
 async function getData() {
 	// const res = await fetch("http://localhost:3000/api/posts", {
-	const res = await fetch(getURL("/api/posts"), {
+	const fetchUrl = getURL("/api/posts");	
+	console.log(fetchUrl);	
+	const res = await fetch(fetchUrl, {
 		cache: "no-store",
 	});
 
