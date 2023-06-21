@@ -5,17 +5,7 @@ import styles from "./page.module.css";
 import Link from "next/link";
 
 async function getData() {
-	// const res = await fetch("http://localhost:3000/api/posts", {
-
-	const IS_SERVER = typeof window === "undefined";
-
-	const baseURL = IS_SERVER
-		? process.env.NEXT_PUBLIC_SITE_URL
-		: window.location.origin;
-
-	const fetchUrl = `${baseURL}/api/posts`;
-
-	const res = await fetch(fetchUrl, {
+	const res = await fetch("https://laslan.vercel.app/api/posts", {
 		cache: "no-store",
 	});
 

@@ -2,18 +2,9 @@ import React from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import getURL from "@/utils/getUrl";
 
 async function getData(id) {
-	// const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
-	const IS_SERVER = typeof window === "undefined";
-
-	const baseURL = IS_SERVER
-		? process.env.NEXT_PUBLIC_SITE_URL
-		: window.location.origin;
-
-	const fetchUrlEndpoint = `${baseURL}/api/posts/${id}`;
-	const res = await fetch(fetchUrlEndpoint, {
+	const res = await fetch(`https://laslan.vercel.app/api/posts/${id}`, {
 		cache: "no-store",
 	});
 
