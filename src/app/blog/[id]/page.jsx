@@ -6,7 +6,13 @@ import getURL from "@/utils/getUrl";
 
 async function getData(id) {
 	// const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
-	const fetchUrlEndpoint = getURL(`api/posts/${id}`);
+	const IS_SERVER = typeof window === "undefined";
+
+	const baseURL = IS_SERVER
+		? process.env.NEXT_PUBLIC_SITE_URL
+		: window.location.origin;
+
+	const fetchUrlEndpoint = `${baseURL}/api/posts/${id}`;
 	const res = await fetch(fetchUrlEndpoint, {
 		cache: "no-store",
 	});
@@ -39,7 +45,7 @@ const BlogPost = async ({ params }) => {
 					<div className={styles.author}>
 						<Image
 							src={data.img}
-							alt=""
+							alt="author avatar"
 							width={40}
 							height={40}
 							className={styles.avatar}

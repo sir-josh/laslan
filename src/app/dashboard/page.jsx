@@ -1,37 +1,12 @@
 "use client";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./page.module.css";
 import useSWR from "swr";
 import Image from "next/image";
 
 const Dashboard = () => {
-	// const [data, setData] = useState([]);
-	// const [isLoading, setIsLoading] = useState(false);
-	// const [err, setErr] = useState(false);
-
-	// useEffect(() => {
-	// 	async function getData() {
-	// 		setIsLoading(true);
-	// 		const res = await fetch(
-	// 			"https://jsonplaceholder.typicode.com/posts",
-	// 			{
-	// 				cache: "no-store",
-	// 			},
-	// 		);
-
-	// 		if (!res.ok) {
-	// 			throw new Error("Failed to fetch data1");
-	// 		}
-
-	// 		const data = await res.json();
-	// 		setData(data);
-	// 		setIsLoading(false);
-	// 	}
-	// 	getData();
-	// }, []);
-
 	const session = useSession();
 	const router = useRouter();
 
